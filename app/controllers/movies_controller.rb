@@ -5,7 +5,8 @@ class MoviesController < ApplicationController
           flash.now[:error] = "no input provided"
           render :new and return
       else
-          @search_results = Movie.search_tmdb(params[:search_terms]).first 10
+          results = Movie.search_tmdb(params[:search_terms]) || []
+          @search_results = results.first(10) unless results == nil
           if @search_results == []
               flash.now[:error] = "no results found"
               render :new and return

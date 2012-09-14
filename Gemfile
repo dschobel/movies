@@ -25,3 +25,5 @@ end
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'ledermann-rails-settings', :require => 'rails-settings'
+gem 'ruby-tmdb'

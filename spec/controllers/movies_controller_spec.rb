@@ -2,14 +2,10 @@ require 'spec_helper'
 
 describe MoviesController do
 
-  #m = FactoryGirl.build(:movie)
   def valid_attributes
     {title: "Inception", director: "Christopher Nolan", release_date: "7-16-2010", description: "In a world where technology exists to enter the human mind through dream invasion, a highly skilled thief is given a final chance at redemption which involves executing his toughest job to date: Inception."}
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # MoviesController. Be sure to keep this updated too.
   def valid_session
     {}
   end
@@ -25,7 +21,7 @@ describe MoviesController do
   describe "POST search_tmdb" do
       describe "with valid params" do
           it "should call search_tmdb of Movie model" do
-              Movie.stub(:search_tmdb).and_return []
+              Movie.stub(:search_tmdb)
               Movie.should_receive(:search_tmdb).once.with 'inception'
               valid_search "inception"
           end
