@@ -1,5 +1,6 @@
 Movies::Application.routes.draw do
   resources :movies
+  post '/search_tmdb', :controller => 'movies', :action => 'search_tmdb'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,4 +1,18 @@
 class MoviesController < ApplicationController
+
+  def search_tmdb
+      if params[:search_terms] == nil 
+          flash.now[:error] = "no input provided"
+          render :new and return
+      else
+          @search_results = Movie.search_tmdb(params[:search_terms]).first 10
+          if @search_results == []
+              flash.now[:error] = "no results found"
+              render :new and return
+          end
+      end
+  end
+
   # GET /movies
   # GET /movies.json
   def index

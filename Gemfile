@@ -4,8 +4,10 @@ gem 'rails', '3.2.7'
 
 gem 'sqlite3'
 group :test, :development do
-      gem "rspec-rails", "~> 2.0"
+      gem 'rspec-rails', '~> 2.0'
       gem 'debugger'
+      gem 'capybara'
+      gem "factory_girl_rails", "~> 4.0"
 end
 
 group :test do
